@@ -9,7 +9,6 @@ VERSION: 2.8
 <div>
 <ul>
 <li>Global Reference Data <strong>Instrument List</strong>: GET Instrument Codes<a href="/#reference/global-reference-data/instrument-list"> Link</a></li>
-<!--<li>Contract-F&O <strong>F&O Trade Create</strong>: POST Allows Futures and Options Trade to be created<a href="/#reference/contract-f&o/fo-trade-create"> Link</a></li>-->
 <li>Contract-F&O <strong>F&O Trade List</strong>: GET List of Futures and Options Trades<a href="/#reference/contract-f&o/fo-trade-list"> Link</a></li>
 <li>Contract-F&O <strong>F&O Trade</strong>: GET Futures and Options Trade<a href="/#reference/contract-f&o/fo-trade"> Link</a></li>
 </ul>
@@ -1828,61 +1827,7 @@ Data Objects and endpoints providing access to accounting transactions generated
     + Attributes (405 MethodNotAllowedMessage)
 
 # Group Contract-F&O
-Data Objects and endpoints providing access to <!--and creation of-->Futures and Options Trades.
-
-## F&O Trade Create [/Contract/{TradingEntityId}/FuturesAndOptions/Trade]
-`POST` Allows Futures and Options Trade to be created
-### Create F&O Trade [POST] 
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|SerialNo|Serial Number|`number`||||
-|TradeDate|Trade Date|`datetime`|||Required|
-|AccountCode|Account Code|`string`|10||Required|
-|Code|Trade Code|`string`|3|||
-|DepartmentCode|Department Code|`string`|4|||
-|InstrumentCode|Instrument Code|`string`|8||Required|
-|PromptMonth|Prompt Month|`datetime`|||Required|
-|Instruction|Instruction|`boolean`|5|||
-|OptionType|Option Type|`string`|1||`C`, `P` or `blank`|
-|OptionSeries|Option Series|`decimal`||||
-|BuySell|Buy or Sell|`string`|1||`B` or `S`|
-|Lots|Lots|`decimal`|||Required. Greater than `0`|
-|PhysRef|Physical Reference|`string`|11|||
-|BrokerCode|Broker Account|`string`|10|||
-|Price|Price|`decimal`|||Required|
-|FloorBrokerCode|Floor Broker Account Code|`string`|10|||
-|TraderCode|Trader Code|`string`|3|||
-|Memo|Memorandum|`string`|120|||
-|StrategyCode|Strategy Code|`string`|15|||
-|StrategyGroup|Strategy Group|`string`|15|||
-|Memo2|Memorandum 2|`string`|20|||
-|ExternalSerial|External Serial|`string`|10|||
-
-
-+ Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
-
-+ Request (application/json)
-    + Header
-
-            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
-
-    + Attributes (F&OTradeCreate)
-
-+ Response 201 (application/json; charset=utf-8)
-    + Attributes 
-        + Data (UniqueNoResponse)
-        + Response (201 CreateResponse)
-
-+ Response 400 (application/json; charset=utf-8)
-    + Attributes (400 Response)
-
-+ Response 404 (application/json; charset=utf-8)
-    + Attributes (404 Response)
-
-+ Response 405 (application/json; charset=utf-8)
-    + Attributes (405 MethodNotAllowedMessage)
+Data Objects and endpoints providing access to Futures and Options Trades.
 
 
 ## F&O Trade List [/Contract/{TradingEntityId}/FuturesAndOptions/Trade/{Property}/{PropertyValue}]
