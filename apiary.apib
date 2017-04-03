@@ -3,6 +3,12 @@ HOST: http://itas.apiary.io/
 VERSION: 2.8
 
 # ITAS API 2.8
+
+## Disclaimer
+
+**** Warning: at this point, ITAS API does not support asynchronus calls for POST, PUT and PATCH requests. Async requests could result in various Error messages, or even a corruption of data in extreme cases and are therefore not supported. ****
+<br />
+<br />
 <strong>Release notes</strong> (3<sup>rd</sup> November 2016)
 
 ## New Endpoints
@@ -147,7 +153,7 @@ Codes relating to the Client Ledger and related endpoints.
 
 
 ### Create Update ClientAccount [PUT]
-`PUT` For Update requests the field `ClientAccountId` is used to check the corresponding value in the URI
+`PUT` For Update requests the field `ClientAccountId` is used to check the corresponding value in the URI. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -223,7 +229,7 @@ Codes relating to the Client Ledger and related endpoints.
     + Attributes (405 MethodNotAllowedMessage)
 
 ### Delta Update ClientAccount [PATCH]
-`PATCH` Delta Update is to be used to update ClientAcount, where the field `ClientAccountId` is the only required field, it cannot be updated but is used to cross reference the Id in the URI
+`PATCH` Delta Update is to be used to update ClientAcount, where the field `ClientAccountId` is the only required field, it cannot be updated but is used to cross reference the Id in the URI. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -505,7 +511,7 @@ Master Data access to various Data objects
 
 
 ### Create Update Master Data [PUT]
-`PUT` Master Data
+`PUT` Master Data. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -743,7 +749,7 @@ Codes relating to Nominal Ledger and related endpoints.
     + Attributes (405 MethodNotAllowedMessage)
 
 ### Update NominalAccount [PUT]
-`PUT` Update Nominal (General) Ledger Acccount profile.
+`PUT` Update Nominal (General) Ledger Acccount profile. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |NominalAccountId|Nominal Account ID|`string`|9||Required|
@@ -779,7 +785,7 @@ Codes relating to Nominal Ledger and related endpoints.
     + Attributes (405 MethodNotAllowedMessage)
 
 ### Delta Update NominalAccount [PATCH]
-`PATCH` Update Nominal (General) Ledger Account profile.
+`PATCH` Update Nominal (General) Ledger Account profile. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |NominalAccountId|Nominal Account ID|`string`|9||Required|
@@ -1758,7 +1764,7 @@ Data Objects and endpoints providing access to accounting transactions generated
 
 
 ## Transaction Header [/Accounting/{TradingEntityId}/Transaction/TransactionHeader/{DocumentReference}]
-`PUT` Document summary information including properties specific to integration requirements.          
+`PUT` Document summary information including properties specific to integration requirements. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>         
 ### Update Transaction Header [PUT]
 
 
@@ -1795,7 +1801,7 @@ Data Objects and endpoints providing access to accounting transactions generated
     + Attributes (405 MethodNotAllowedMessage)
 
 ### Delta Update Transaction Header [PATCH]
-`PATCH` Document summary information including properties specific to integration requirements.
+`PATCH` Document summary information including properties specific to integration requirements. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -1833,7 +1839,7 @@ Data Objects and endpoints providing access to accounting transactions generated
 Data Objects and endpoints providing access to and creation of Futures and Options Trades.
 
 ## F&O Trade Create [/Contract/{TradingEntityId}/FuturesAndOptions/Trade]
-`POST` Allows Futures and Options Trade to be created
+`POST` Allows Futures and Options Trade to be created. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 ### Create F&O Trade [POST] 
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -2217,7 +2223,7 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 Data Objects and endpoints providing access to cash create, match and authorisation functionality.
 
 ## AuthoriseForPosting [/Finance/{TradingEntityId}/Cash/AuthoriseForPosting/{DocumentReference}]
-`PUT` Authorise an entity to be added to the Posting process.
+`PUT` Authorise an entity to be added to the Posting process. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 ### AuthoriseForPosting [PUT]
 
 
@@ -2265,7 +2271,7 @@ None.
     + Attributes (405 MethodNotAllowedMessage)
 
 ## PayableManual [/Finance/{TradingEntityId}/Cash/PayableManual]
-`POST` Allows generic cash payments to be created between multiple accounts  
+`POST` Allows generic cash payments to be created between multiple accounts. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>  
 ### Create PayableManual [POST]
 
 
@@ -2299,7 +2305,7 @@ None.
     + Attributes (405 MethodNotAllowedMessage)
 
 ## PayableOnAccount [/Finance/{TradingEntityId}/Cash/PayableOnAccount]
-`POST` Allows cash payments to be created on account of existing (posted) accounting documents (e.g. Purchase Invoices) 
+`POST` Allows cash payments to be created on account of existing (posted) accounting documents (e.g. Purchase Invoices). * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 ### Create PayableOnAccount [POST]
 
 
@@ -2337,7 +2343,7 @@ None.
 
 
 ## ReceivableManual [/Finance/{TradingEntityId}/Cash/ReceivableManual]
-`POST` Allows generic cash receipts to be created between multiple accounts  
+`POST` Allows generic cash receipts to be created between multiple accounts. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>  
 ### Create ReceivableManual [POST]
 
 
@@ -2371,7 +2377,7 @@ None.
     + Attributes (405 MethodNotAllowedMessage)
 
 ## ReceivableOnAccount [/Finance/{TradingEntityId}/Cash/ReceivableOnAccount]
-`POST` Allows cash receipts to be created on account of existing (posted) accounting documents (e.g. Sales Invoices) 
+`POST` Allows cash receipts to be created on account of existing (posted) accounting documents (e.g. Sales Invoices). * <a href="/#introduction/disclaimer"> (Disclaimer)</a> 
 ### Create ReceivableOnAccount [POST]
 
 
@@ -2718,7 +2724,7 @@ Management activities of Stock Units (where represented by WIP Accounts).
 Production Order processing services.
 
 ## MarkOrderAsProcessed [/Inventory/{TradingEntityId}/Physicals/OrderProcessing/MarkOrderAsProcessed/{ReleaseId}]
-`PUT` Trigger call to complete an order (e.g. create stock journals etc)
+`PUT` Trigger call to complete an order (e.g. create stock journals etc). * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 ### Update MarkOrderAsProcessed [PUT]
 
 
@@ -2795,7 +2801,7 @@ None.
     + Attributes (405 MethodNotAllowedMessage)
 
 ### Create StockLoading [PUT]
-`PUT` Remove current suggestions for Tanks and Create Stock Loadings
+`PUT` Remove current suggestions for Tanks and Create Stock Loadings. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -2889,7 +2895,7 @@ None.
     + Attributes (405 MethodNotAllowedMessage)
 
 ### Update StockMovement [PUT]
-`PUT` Information relating to the processing of the Order.
+`PUT` Information relating to the processing of the Order. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
